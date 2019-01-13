@@ -24,7 +24,7 @@ export default {
   props: ['cards', 'options','number', 'guesses'],
   methods: {
     initializeCards() {
-      this.options = this.options.slice(0,this.number);
+      this.options = this.options.slice(0,this.number/2);
       for (let i = 0; i <= (this.options.length*2)-1; i++) {        
         this.cards.push({
           id:i,
@@ -114,6 +114,7 @@ export default {
 
 .card_reversed {
   background: #000;
+  color: #000;
   transform: rotateY(180deg);
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <router-link to="/">
+    <router-link to="/" class="logo">
       <img src="../../assets/images/supercharge-logo.svg" alt="Supercharge Logo">
       <span>&nbsp; MEMORY GAME</span>
     </router-link>
@@ -18,8 +18,11 @@ export default {
   background: #333;
   color: #fff;
   padding: 10px;
+}
+
+.logo {
   display: flex;
-  align-content: center;
+  align-items: center;
 }
 .header img {
   height: 30px;
