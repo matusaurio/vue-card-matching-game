@@ -83,7 +83,7 @@ export default {
     },
   },
   watch: {
-    cards: (v) => {
+    cards: function(v) {
       if (v.length == 0) {
         this.initializeCards();
       }

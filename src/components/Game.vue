@@ -87,7 +87,7 @@ export default {
   },
   methods: {
     sendToCompare(card) {
-      card.reversed = !card.reversed;
+      card.reversed = !card.re6versed;
       ++this.count;
       this.guesses.push(card);
       this.tries++;
