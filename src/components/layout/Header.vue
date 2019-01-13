@@ -1,7 +1,9 @@
 <template>
   <header class="header">
-    <img src="../../assets/images/supercharge-logo.svg" alt="Supercharge Logo">
-    <p>&nbsp; MEMORY GAME</p>
+    <router-link to="/">
+      <img src="../../assets/images/supercharge-logo.svg" alt="Supercharge Logo">
+      <span>&nbsp; MEMORY GAME</span>
+    </router-link>
   </header>
 </template>
 
@@ -21,5 +23,9 @@ export default {
 }
 .header img {
   height: 30px;
+}
+.header a {
+  text-decoration: none;
+  color: #fff;
 }
 </style>

@@ -1,4 +1,7 @@
-# vue_card_matching_game
+# Card matching game
+Card matching game made with Vue.js for supercharge
+
+[Visit site](https://friendly-kowalevski-d3c757.netlify.com/)
 
 ## Project setup
 ```
