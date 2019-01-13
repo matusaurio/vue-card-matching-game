@@ -4,10 +4,10 @@
         class="card"
         v-for="card in cards" 
         :key="card.id" 
-        :class="{ card_reversed: !card.reversed }"
+        :class="{ reversed: !card.reversed, found: card.found }"
         @click="showCard(card)"
       >
-        {{card.face.name}}
+        <img :src="getImgUrl(card.face.name)" :class="{reversed: !card.reversed}">
       </div>
     </div>
 </template>
@@ -40,11 +40,6 @@ export default {
         return
       }
       this.$emit('compare-cards', card);
-      // card.reversed = true;
-
-      // setTimeout(() => {
-      //   card.reversed = false
-      // }, 2000);
     },
     verifyDuplicate(card) {
       if (this.guesses.length === 1 && this.guesses[0].id === card.id) {
@@ -81,6 +76,9 @@ export default {
       let item = this.options.find(obj => obj.name === card.name);
       return this.options[item.pairs-=1];
     },
+    getImgUrl(name) {
+      return require('../assets/images/cards/' + name + '.png');
+    }
   },
   watch: {
     cards: function(v) {
@@ -94,27 +92,48 @@ export default {
 
 <style>
 .cards-container {
-  width: 100%;
+  width: 50%;
+  margin: 25px auto;
   display: grid;
-  grid-template-columns: repeat(5,100px);
+  grid-template-columns: repeat(5,1fr);
   grid-gap: 10px;
-  margin-left: 35%;
 }
 
 .card {
-  background-color: #444;
-  color: #fff;
+  color: #333;
   border-radius: 5px;
   padding: 20px;
   order: 1;
   cursor: pointer;
-  box-shadow: 2px 2px #eee;
   transition: all .4s ease;
 }
 
-.card_reversed {
-  background: #000;
-  color: #000;
+img {
+  max-width: 100%;
+  height: auto;
+  z-index: 2;
   transform: rotateY(180deg);
+}
+
+img.reversed {
+  visibility: hidden;
+}
+
+.card.reversed {
+  background: #fff;
+  color: #fff;
+  box-shadow: 2px 2px #eee;
+  border: 1px solid #eee;
+  transform: rotateY(180deg);
+}
+
+@media only screen and (max-width: 600px) {
+  .cards-container {
+    width: 95%;
+  }
+
+  .card {
+    padding: 2px;
+  }
 }
 </style>

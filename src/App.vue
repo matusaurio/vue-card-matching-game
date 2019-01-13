@@ -1,10 +1,6 @@
 <template>
   <div id="app">
     <Header />
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
     <router-view/>
   </div>
 </template>
@@ -22,11 +18,37 @@ export default {
 
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+html {
+	box-sizing: border-box;
 }
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #ffffff;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 16px;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
 
 body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -48,5 +70,10 @@ body {
   padding: 15px;
   border: none;
   border-radius: 5px;
+}
+
+.sm-txt {
+  font-size: .7em;
+  text-align: justify;
 }
 </style>

@@ -1,10 +1,13 @@
 <template>
   <div class="game">
     <div class="info">
-      <p>Current tries: {{ tries }}</p>
-      <p>Best: {{ best }}</p>
-      <button @click="restartGame">Restart</button>
+      <div class="sm-txt">Current tries: {{ tries }}</div>
+      <div class="sm-txt">Best: {{ best }}</div>
+      <div class="col">
+      <button @click="restartGame" class="btn">Restart</button>
+      </div>
     </div>
+    <div class="cards">
       <Card
         :cards="cards" 
         :options="options" 
@@ -12,6 +15,7 @@
         :guesses="guesses" 
         @compare-cards="sendToCompare"
       />
+    </div>
   </div>
 </template>
 
@@ -129,5 +133,26 @@ export default {
 <style scoped>
 .game {
   text-align: center;
+}
+
+.btn {
+  background: #fff;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px 25px;
+  text-transform: uppercase;
+}
+
+.cards {
+  margin-top: 25px;
+  display: block;
+  margin: auto;
+}
+
+.info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 30px;
 }
 </style>

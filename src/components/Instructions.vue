@@ -3,7 +3,7 @@
     <h1>SUPERCHARGE</h1>
     <h4>Memory Game</h4>
     <br>
-    <!-- <ul>
+    <!-- <ul class="sm-txt">
       <li>When the user clicks a card, “flip it over” and reveal the hidden image.</li>
       <li>When two cards are revealed:
         <ul>
@@ -54,9 +54,6 @@ export default {
 </script>
 
 <style scoped>
-.instructions {
-}
-
 label {
   font-size: 8px;
 }
